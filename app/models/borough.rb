@@ -6,13 +6,11 @@ require 'sinatra'
 class Borough
   include DataMapper::Resource
 
-  attr_reader :murder, :wounding_gbh
-
   property :id, Serial
-  property :borough_name, String
-  property :murder, Integer
-  property :wounding_gbh, Integer
-  property :assault_with_injury, Integer
+  property :Borough_Name, String
+  property :Murder, Integer
+  property :Wounding_GBH, Integer
+  property :Assault_With_Injury, Integer
   property :Common_Assault, Integer
   property :Offensive_Weapon, Integer
   property :Harassment, Integer
@@ -23,12 +21,12 @@ class Borough
   property :Business_Property, Integer
   property :Burglary_in_A_Dwelling, Integer
   property :Burglary_in_Other_Buildings, Integer
-  property :TheftTaking_Of_Motor_Vehicle, Integer
+  property :Theft_Taking_Of_Motor_Vehicle, Integer
   property :Theft_From_Motor_Vehicle, Integer
   property :Motor_Vehicle_Interference_Tampering, Integer
   property :Theft_From_Shops, Integer
   property :Theft_Person, Integer
-  property :TheftTaking_Of_Pedal_Cycles, Integer
+  property :Theft_Taking_Of_Pedal_Cycles, Integer
   property :Other_Theft, Integer
   property :Handling_Stolen_Goods, Integer
   property :Other_Fraud_Forgery, Integer

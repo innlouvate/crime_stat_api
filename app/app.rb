@@ -24,7 +24,7 @@ class CrimeData < Sinatra::Base
 
   get '/:borough' do
     content_type :json
-    borough = Borough.first(borough_name: params[:borough])
+    borough = Borough.first(Borough_Name: params[:borough])
     if params[:crime] == nil
       { borough: borough }.to_json
     else
@@ -33,7 +33,7 @@ class CrimeData < Sinatra::Base
       crimes.each do |crime|
         crime_info[crime.to_sym] = borough.send(crime)
       end
-      { borough: borough.borough_name, crime_info: crime_info }.to_json
+      { borough: borough.Borough_Name, crime_info: crime_info }.to_json
     end
   end
 

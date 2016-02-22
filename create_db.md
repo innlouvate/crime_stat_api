@@ -1,14 +1,13 @@
 
-Handling_Stolen_Goods,Other_Fraud_Forgery,Criminal_Damage_to_a_Dwelling,Criminal_Damage_To_Other_Buildings,Criminal_Damage_To_Motor_Vehicle,Other_Criminal_Damage,Drug_Trafficking,Possession_Of_Drugs,Other_Drugs,Going_Equipped,Other_Notifiable
 
 
 CREATE TABLE boroughs
 (
 id serial,
-borough_name character varying,
-murder Integer,
-wounding_gbh Integer,
-assault_with_injury Integer,
+Borough_Name character varying,
+Murder Integer,
+Wounding_GBH Integer,
+Assault_With_Injury Integer,
 Common_Assault Integer,
 Offensive_Weapon Integer,
 Harassment Integer,
@@ -19,12 +18,12 @@ Personal_Property Integer,
 Business_Property Integer,
 Burglary_in_A_Dwelling Integer,
 Burglary_in_Other_Buildings Integer,
-TheftTaking_Of_Motor_Vehicle Integer,
+Theft_Taking_Of_Motor_Vehicle Integer,
 Theft_From_Motor_Vehicle Integer,
 Motor_Vehicle_Interference_Tampering Integer,
 Theft_From_Shops Integer,
 Theft_Person Integer,
-TheftTaking_Of_Pedal_Cycles Integer,
+Theft_Taking_Of_Pedal_Cycles Integer,
 Other_Theft Integer,
 Handling_Stolen_Goods Integer,
 Other_Fraud_Forgery Integer,
@@ -40,4 +39,4 @@ Other_Notifiable Integer
 )
 
 
-COPY boroughs FROM '/Users/louisefranklin/Documents/Code/Makers/6week/db_api_crimedata/app/models/boroughs-short.csv' DELIMITER ',' CSV HEADER;
+COPY boroughs FROM '/Users/louisefranklin/Documents/Code/Makers/6week/db_api_crimedata/app/models/boroughs.csv' DELIMITER ',' CSV HEADER;
