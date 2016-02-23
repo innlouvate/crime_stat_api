@@ -12,7 +12,7 @@ class Borough
 
 end
 
-# CSV.foreach("/Users/louisefranklin/Documents/Code/Makers/6week/db_api_crimedata/app/models/boroughs.csv") do |row|
+# CSV.foreach("/Users/louisefranklin/Documents/Code/Makers/6week/db_api_crimedata/app/models/FY15.csv") do |row|
 #   Borough.create(content: row[0])
 # end
 
