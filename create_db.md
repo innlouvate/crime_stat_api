@@ -39,4 +39,9 @@ Other_Notifiable Integer
 )
 
 
+COPY fy16s FROM '/Users/louisefranklin/Documents/Code/Makers/6week/db_api_crimedata/app/models/FY16.csv' DELIMITER ',' CSV HEADER;
+
+COPY fy15s FROM '/Users/louisefranklin/Documents/Code/Makers/6week/db_api_crimedata/app/models/FY15.csv' DELIMITER ',' CSV HEADER;
+
+
 COPY boroughs FROM '/Users/louisefranklin/Documents/Code/Makers/6week/db_api_crimedata/app/models/boroughs.csv' DELIMITER ',' CSV HEADER;

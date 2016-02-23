@@ -3,38 +3,31 @@ ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
 require 'sinatra/flash'
 require_relative 'data_mapper_setup'
-require_relative 'models/borough'
+
 require 'json'
 
 class CrimeData < Sinatra::Base
-  # enable :sessions
-  # set :session_secret, 'super secret'
-  # register Sinatra::Flash
-  # use Rack::MethodOverride
-
-  get '/' do
-    'Hello CrimeData!'
-  end
-
-  # get '/:borough' do
-  #   content_type :json
-  #   borough = Borough.first(borough_name: params[:borough])
-  #   { borough: borough }.to_json
-  # end
 
   get '/:borough' do
     content_type :json
     borough = Borough.first(Borough_Name: params[:borough])
-    if params[:crime] == nil
-      { borough: borough }.to_json
-    else
-      crimes = params[:crime].split('-')
-      crime_info = {}
-      crimes.each do |crime|
-        crime_info[crime.to_sym] = borough.send(crime)
+    # years = params[:years].split('-')
+    year_info = {}
+
+    params[:years].split('-').each do |year|
+      if params[:crimes].nil?
+        year_info[year.to_sym] = { crime_info: borough.send(year) }
+      else
+        crimes = params[:crimes].split('-')
+        crime_info = {}
+        crimes.each do |crime|
+          crime_info[crime.to_sym] = borough.send(year).send(crime)
+        end
+        year_info[year.to_sym] = { crime_info: crime_info }
       end
-      { borough: borough.Borough_Name, crime_info: crime_info }.to_json
+
     end
+    { borough: borough.Borough_Name, year_info: year_info }.to_json
   end
 
   # start the server if ruby file executed directly
