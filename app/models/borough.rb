@@ -8,7 +8,7 @@ class Borough
   belongs_to :fy15 #:key => true
 
   property :id, Serial
-  property :Borough_Name, String
+  property :borough_name, String
 
 end
 

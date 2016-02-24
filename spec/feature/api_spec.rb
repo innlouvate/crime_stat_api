@@ -20,8 +20,8 @@ describe "Crime_data" do
   end
 
   it "should return the correct info as json" do
-    get '/Brent?years=fy16&crimes=Murder'
-    brent_info = { borough: 'Brent', year_info: {fy15: {crime_info: {Murder: 3}}}}
+    get '/Brent?years=fy16&crimes=murder'
+    brent_info = { borough: 'Brent', year_info: {fy15: {crime_info: {murder: 3}}}}
     brent_info.to_json.must_equal last_response.body
   end
 

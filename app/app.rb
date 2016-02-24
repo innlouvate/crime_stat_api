@@ -10,8 +10,7 @@ class CrimeData < Sinatra::Base
 
   get '/:borough' do
     content_type :json
-    borough = Borough.first(Borough_Name: params[:borough])
-    # years = params[:years].split('-')
+    borough = Borough.first(borough_name: (params[:borough].capitalize))
     year_info = {}
 
     params[:years].split('-').each do |year|
@@ -27,7 +26,7 @@ class CrimeData < Sinatra::Base
       end
 
     end
-    { borough: borough.Borough_Name, year_info: year_info }.to_json
+    { borough: borough.borough_name, year_info: year_info }.to_json
   end
 
   # start the server if ruby file executed directly
